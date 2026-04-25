@@ -59,7 +59,7 @@ const App = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>Hi, I'm Mujjamil , a developer based in Pune with a passion for code. </p>
+            <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>Hi, I'm Mujjamil , a developer with a passion for building real world projects. </p>
 
 
             <Button
