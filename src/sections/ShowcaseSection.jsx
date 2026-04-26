@@ -94,10 +94,33 @@ const AppShowcase = () => {
             </div>
 
             <div className="project" ref={ycDirectoryRef}>
-              <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+              <div className="image-wrapper bg-[#E7F0FF]">
+                <img src="/images/aiclassroom.png" alt="AI Classroom App" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <h2>AI Classroom — Intelligent Learning & Document Assistant</h2>
+              <p className="text-white-50 text-sm md:text-base mt-2">
+                A full-stack AI-powered platform built with{" "}
+                <strong>Django</strong> &amp; <strong>React JS</strong>, using{" "}
+                <strong>SQL</strong> for data storage and integrated with{" "}
+                <strong>Groq API</strong> &amp; <strong>OpenAI API</strong>.
+                Features include AI text correction, smart analysis of{" "}
+                <strong>PDF, DOCX &amp; PPTX</strong> documents, and a{" "}
+                <strong>voice assistant</strong> for hands-free interaction.
+              </p>
+              <a
+                href="https://github.com/Mujjamil/Ai-Classroom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1c1c21] text-white border border-[#2d2d38] text-sm font-semibold hover:bg-[#282732] transition-colors duration-300"
+              >
+                <img
+                  src="/images/logos/github.svg"
+                  alt="GitHub"
+                  className="w-4 h-4"
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
+                View on GitHub
+              </a>
             </div>
           </div>
         </div>
