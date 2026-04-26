@@ -26,7 +26,7 @@ const SketchfabEmbed = () => {
 
   /* Gradient that fades from solid black → transparent,
      used for top and bottom so the model blends naturally. */
-  const topGrad    = "linear-gradient(to bottom, #000000 0%, #000000 85%, transparent 100%)";
+  const topGrad = "linear-gradient(to bottom, #000000 0%, #000000 85%, transparent 100%)";
   const bottomGrad = "linear-gradient(to top,    #000000 0%, #000000 85%, transparent 100%)";
 
   return (
