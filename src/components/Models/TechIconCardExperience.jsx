@@ -16,6 +16,52 @@ const TechIconCardExperience = ({ model }) => {
         }
       });
     }
+    if (model.name === "Java Developer") {
+      scene.scene.traverse((child) => {
+        if (child.isMesh) {
+          // Apply a custom shader material to all meshes of the model so the backing fills the cutouts seamlessly
+          const material = new THREE.MeshStandardMaterial({
+            roughness: 0.2,
+            metalness: 0.8,
+          });
+
+          material.onBeforeCompile = (shader) => {
+            shader.vertexShader = shader.vertexShader.replace(
+              `#include <common>`,
+              `#include <common>
+               varying vec3 vPosition;`
+            );
+            shader.vertexShader = shader.vertexShader.replace(
+              `#include <begin_vertex>`,
+              `#include <begin_vertex>
+               vPosition = position;`
+            );
+            shader.fragmentShader = shader.fragmentShader.replace(
+              `#include <common>`,
+              `#include <common>
+               varying vec3 vPosition;`
+            );
+            shader.fragmentShader = shader.fragmentShader.replace(
+              `vec4 diffuseColor = vec4( diffuse, opacity );`,
+              `
+              // Java red: #e11e25
+              // Java blue (darker shade to counter lighting): #002255
+              vec3 steamColor = vec3(0.906, 0.118, 0.145); // #e11e25
+              vec3 cupColor = vec3(0.0, 0.13, 0.33);       // #002255
+              
+              // Transition threshold at local y = -0.15
+              float factor = smoothstep(-0.2, -0.1, vPosition.y);
+              vec3 finalColor = mix(cupColor, steamColor, factor);
+              
+              vec4 diffuseColor = vec4( finalColor, opacity );
+              `
+            );
+          };
+
+          child.material = material;
+        }
+      });
+    }
   }, [scene]);
 
   return (

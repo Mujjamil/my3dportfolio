@@ -99,8 +99,8 @@ const techStackImgs = [
     imgPath: "/images/logos/react.png",
   },
   {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    name: "Java Developer",
+    imgPath: "/images/logos/react.png",
   },
   {
     name: "Backend Developer",
@@ -124,9 +124,9 @@ const techStackIcons = [
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
+    name: "Java Developer",
+    modelPath: "/models/java_programming_language_logo.glb",
+    scale: 2.8,
     rotation: [0, 0, 0],
   },
   {
