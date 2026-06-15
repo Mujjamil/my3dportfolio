@@ -1,28 +1,26 @@
 import React from 'react'
-import { div } from 'three/tsl'
-import { words } from '../constants'
+import { words, socialImgs } from '../constants'
 import Button from '../components/Button'
 import HeroExperience from '../components/HeroModels/HeroExperience'
-import {useGSAP} from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 import AnimatedCounter from '../components/AnimatedCounter'
 
 
-
 const App = () => {
-  useGSAP(()=>{
+  useGSAP(() => {
     gsap.fromTo('.hero-text h1',
       {
-        y:50,
-        opacity:0
-        
+        y: 50,
+        opacity: 0
+
       },
       {
-        y:0,
-        opacity:1,
-        stagger:0.2,
-        duration:1,
-        ease:'power2.inout'
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power2.inout'
       },
     )
   })
@@ -40,7 +38,7 @@ const App = () => {
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word) => (
-                      <span key={word.text} className='flex items-center md:gap-3 gap-1 pb-2'>
+                      <span key={word.text} className='flex items-center md:gap-3 gap-1 h-[48px] md:h-[78px]'>
                         <img
                           src={word.imgPath}
                           alt={word.text}
@@ -50,7 +48,7 @@ const App = () => {
                         </span>
 
                       </span>
-                    ))} 
+                    ))}
                   </span>
                 </span>
               </h1>
@@ -59,26 +57,55 @@ const App = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>Hi, I'm Mujjamil , a developer with a passion for building real world projects. </p>
+            <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>Hi, I'm Mujjamil , a developer with a passion<br /> for 
+            building real world projects. </p>
 
 
-            <Button
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="button"
-              text="See my Work"
-            />
+            <div className="flex flex-col gap-4">
+              <Button
+                className="md:w-80 md:h-14 w-60 h-12"
+                id="button"
+                text="See my Work"
+              />
+              <div className="flex items-center gap-4 mt-2 relative z-20">
+                <span className="text-white-50 text-sm md:text-base font-medium">Follow me :</span>
+                <div className="flex gap-3">
+                  {socialImgs.map((socialImg, index) => (
+                    <a
+                      key={index}
+                      href={socialImg.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-black-50 bg-black-100 hover:bg-black-50 flex justify-center items-center rounded-xl size-8 md:size-12 cursor-pointer transition-all duration-300 hover:scale-110 hover:border-white-50"
+                    >
+                      <img src={socialImg.imgPath} alt={socialImg.name} className="size-5 md:size-6" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="relative z-10 mt-0">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-transparent text-white-50 border border-[#2d2d38] text-sm md:text-base hover:text-white hover:border-white transition-all duration-300 w-fit cursor-pointer shadow-lg hover:scale-105"
+                >
+                  View Resume
+                </a>
+              </div>
+            </div>
           </div>
         </header>
         {/* RIGHT:3D MODEL */}
-        <figure>
+        <figure className="w-full m-0 flex justify-center xl:contents">
           <div className="hero-3d-layout">
             <HeroExperience />
           </div>
         </figure>
 
       </div>
-      <AnimatedCounter/>
-      
+      <AnimatedCounter />
+
     </section>
   )
 }

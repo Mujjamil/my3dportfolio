@@ -112,7 +112,7 @@ const SketchfabEmbed = () => {
           position: "absolute",
           bottom: 0, left: 0,
           width: "80px",
-          height: "54px",
+          height: "44px",
           background: "#000000",
           zIndex: 31,
           pointerEvents: "none",

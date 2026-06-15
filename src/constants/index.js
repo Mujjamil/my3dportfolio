@@ -167,7 +167,7 @@ const expCards = [
     imgPath: "/images/canvas3.png",
     logoPath: "/images/1.png",
     title: "AI Engineer & Full-Stack Developer",
-    date: "June 2020 - December 2023",
+    date: "September 2025 - March 2026",
     responsibilities: [
       "Built responsive UIs with React, Tailwind CSS, and JSX; implemented Node.js and Supabase backend, reducing API response time by 30%.",
       "Designed and automated Webinar Flow systems for lead analysis and end-to-end webinar automation, managing 500+ leads per campaign.",
@@ -225,18 +225,17 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
+    link: "https://www.instagram.com/___mj.5___/",
   },
   {
     name: "x",
     imgPath: "/images/x.png",
+    link: "https://x.com/workwidmj",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    link: "https://www.linkedin.com/in/mujjamil-jamadar/",
   },
 ];
 
